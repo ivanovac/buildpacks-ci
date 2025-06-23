@@ -18,9 +18,9 @@ inputs:
   - name: php-buildpack
   - name: dotnet-core-buildpack
   - name: hwc-buildpack
-# params:
-#   USERNAME: ((coredeps-dockerhub-user.username))
-#   PASSWORD: ((coredeps-dockerhub-user.password))
+params:
+  USERNAME: ((coredeps-dockerhub-user.username))
+  PASSWORD: ((coredeps-dockerhub-user.password))
 outputs:
   - name: buildpack-artifacts
 run:

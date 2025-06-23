@@ -4,8 +4,8 @@ image_resource:
   type: docker-image
   source:
     repository: cfbuildpacks/ci
-    # username: ((coredeps-dockerhub-user.username))
-    # password: ((coredeps-dockerhub-user.password))
+    username: ((coredeps-dockerhub-user.username))
+    password: ((coredeps-dockerhub-user.password))
 inputs:
   - name: buildpacks-ci
   - name: verification-whitelist
@@ -24,17 +24,4 @@ params:
 outputs:
   - name: buildpack-artifacts
 run:
-  # path: buildpacks-ci/tasks/verify-buildpack-binaries/run.rb
-  path: bash
-  args:
-    - -c
-    - |
-      set -euo pipefail
-      echo "Environment Variables:"
-      env
-      echo "Inputs:"
-      ls -l /tmp/build/inputs
-      echo "Outputs:"
-      ls -l /tmp/build/outputs
-      echo "Username: $USERNAME"
-      echo "Password: $PASSWORD"
+  path: buildpacks-ci/tasks/verify-buildpack-binaries/run.rb

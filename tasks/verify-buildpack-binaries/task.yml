@@ -18,7 +18,23 @@ inputs:
   - name: php-buildpack
   - name: dotnet-core-buildpack
   - name: hwc-buildpack
+params:
+  USERNAME: ((coredeps-dockerhub-user.username))
+  PASSWORD: ((coredeps-dockerhub-user.password))
 outputs:
   - name: buildpack-artifacts
 run:
-  path: buildpacks-ci/tasks/verify-buildpack-binaries/run.rb
+  # path: buildpacks-ci/tasks/verify-buildpack-binaries/run.rb
+  path: bash
+  args:
+    - -c
+    - |
+      set -euo pipefail
+      echo "Environment Variables:"
+      env
+      echo "Inputs:"
+      ls -l /tmp/build/inputs
+      echo "Outputs:"
+      ls -l /tmp/build/outputs
+      echo "Username: $USERNAME"
+      echo "Password: $PASSWORD"

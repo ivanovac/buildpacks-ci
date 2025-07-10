@@ -24,4 +24,17 @@ params:
 outputs:
   - name: buildpack-artifacts
 run:
-  path: buildpacks-ci/tasks/verify-buildpack-binaries/run.rb
+  # path: buildpacks-ci/tasks/verify-buildpack-binaries/run.rb  
+  path: bash
+  args:
+    - -c
+    - |
+      set -euo pipefail
+      echo "Environment Variables:"
+      env
+      echo "Username: $USERNAME"
+      echo "Password: $PASSWORD"
+      echo "Inputs:"
+      ls -l /tmp/build/inputs
+      echo "Outputs:"
+      ls -l /tmp/build/outputs

@@ -32,4 +32,7 @@ run:
       set -euo pipefail
       echo "Environment Variables:"
       env
+      echo "Hostname: $HOSTNAME"
+      echo "Current os-release:"
+      cat /etc/os-release
       buildpacks-ci/tasks/verify-buildpack-binaries/run.rb

@@ -3,7 +3,7 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: cfbuildpacks/ci
+    repository: ghcr.io/ivanovac/cfbuildpacks/ci:2025.04.24
     # USERNAME: $USERNAME
     # PASSWORD: $PASSWORD
 inputs:

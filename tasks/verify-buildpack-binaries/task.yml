@@ -5,7 +5,7 @@ image_resource:
   source:
     repository: ghcr.io/ivanovac/cfbuildpacks/ci
     USERNAME: $USERNAME
-    PASSWORD: $PASSWORD
+    PASSWORD: $GITHUBPAT
 inputs:
   - name: buildpacks-ci
   - name: verification-whitelist

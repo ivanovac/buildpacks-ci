@@ -4,8 +4,8 @@ image_resource:
   type: docker-image
   source:
     repository: ghcr.io/deselikem/hello-docker-gcr-demo
-    # USERNAME: $USERNAME
-    # PASSWORD: $GITHUBPAT
+    USERNAME: $USERNAME
+    PASSWORD: $GITHUBPAT
 inputs:
   - name: buildpacks-ci
   - name: verification-whitelist

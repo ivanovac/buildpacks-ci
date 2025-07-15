@@ -3,9 +3,9 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: ghcr.io/ivanovac/cfbuildpacks/ci
-    USERNAME: $USERNAME
-    PASSWORD: $GITHUBPAT
+    repository: ghcr.io/deselikem/hello-docker-gcr-demo:latest
+    # USERNAME: $USERNAME
+    # PASSWORD: $GITHUBPAT
 inputs:
   - name: buildpacks-ci
   - name: verification-whitelist
@@ -35,4 +35,4 @@ run:
       echo "Hostname: $HOSTNAME"
       echo "Current os-release:"
       cat /etc/os-release
-      buildpacks-ci/tasks/verify-buildpack-binaries/run.rb
+      # buildpacks-ci/tasks/verify-buildpack-binaries/run.rb

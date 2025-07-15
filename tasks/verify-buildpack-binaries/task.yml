@@ -3,7 +3,7 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: ghcr.io/deselikem/hello-docker-gcr-demo:latest
+    repository: ghcr.io/deselikem/hello-docker-gcr-demo
     # USERNAME: $USERNAME
     # PASSWORD: $GITHUBPAT
 inputs:
